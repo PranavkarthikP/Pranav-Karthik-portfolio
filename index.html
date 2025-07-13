@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pranav’s Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ <nav>
+  <div class="logo">Menu</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <ul id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+ <header id="home" class="hero">
+  <h1>Hi, I'm Pranav Karthik 👨🏻‍💻</h1>
+  <p class="tagline">Aspiring Developer | Creative Thinker</p>
+  <p class="hero-intro updated-about">
+  I'm a passionate developer who loves building clean, efficient, and creative digital solutions.  
+  I specialize in web technologies like HTML, CSS, JavaScript, and Python, and I enjoy learning new tools that help me grow every day.
+</p>
+  <a href="#projects" class="btn">View My Work</a>
+</header>
+
+
+  <section id="about">
+    <h1>About Me</h1>
+    <p><p>
+  I'm a passionate and detail-oriented aspiring software developer, skilled in front-end and game development. I have hands-on experience in HTML, CSS, JavaScript, Python, and C, Java and Unity. I enjoy solving problems, creating user-friendly interfaces, and turning ideas into fully functional digital experiences. I'm also familiar with AWS cloud services and have worked with WordPress for web projects. My strengths include strong communication, teamwork, and a constant drive to learn and grow in the tech space.
+</p>
+<div class="about-cards">
+  <div class="about-card">
+    <h3>🎓 Education</h3>
+    <p>B.E - Government College of Engineering, Thanjavur<br>CGPA: 8.3</p>
+  </div>
+  <div class="about-card">
+    <h3>👨🏻‍💻 Strengths</h3>
+    <p>Problem Solving, Communication, Creative Thinking</p>
+  </div>
+</div>
+
+</p>
+ <section id="skills">
+  <h2>Skills</h2>
+  <div class="skill">
+    <p>HTML</p>
+    <div class="skill-bar"><div class="fill" data-value="90">HTML</div></div>
+  </div>
+  <div class="skill">
+    <p>CSS</p>
+    <div class="skill-bar"><div class="fill" data-value="80">CSS</div></div>
+  </div>
+  <div class="skill">
+    <p>JavaScript</p>
+    <div class="skill-bar"><div class="fill" data-value="70">JavaScript</div></div>
+  </div>
+  <div class="skill">
+    <p>Python</p>
+    <div class="skill-bar"><div class="fill" data-value="80">Python/div></div>
+  </div>
+  <div class="skill">
+    <p>Unity (C#)</p>
+    <div class="skill-bar"><div class="fill" data-value="50">Unity(C#)</div></div>
+  </div>
+  <div class="skill">
+    <p>JAVA</p>
+    <div class="skill-bar"><div class="fill"data-value="60">JAVA</div></div>
+  </div>
+  <div class="skill">
+    <p>C</p>
+    <div class="skill-bar"><div class="fill" data-value="60">C</div></div>
+  </div>
+</section>
+
+  <section id="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>🔐 Automatic Gatepass System</h3>
+    <p>Biometric-based gatepass project using C & Arduino for secure college entry.</p>
+  </div>
+
+ <div class="project">
+  <h3>💧 Java Water Reminder App</h3>
+  <p>A Java-based reminder tool that notifies users to stay hydrated regularly. Designed for improved focus and health.</p>
+  <a href="https://github.com/PranavkarthikP/java-water-remainder" target="_blank">🔗 View on GitHub</a>
+</div>
+
+</section>
+
+
+  <section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-info">
+    <p>Email: pranavkartik7751@gmail.com</p>
+    <p>Phone: 8248014903</p>
+    <p>Instagram: @pranav.karthik__</p>
+    <a href="resume.pdf" target="_blank" class="btn resume-btn">📄 View Resume</a>
+    <a href="https://www.linkedin.com/in/pranav-karthik-19102003pk/" target="_blank" class="btn resume-btn" >linkedin</a>
+  </div>
+</section>
+<script>
+  function toggleMenu() {
+    const navLinks = document.getElementById("nav-links");
+    navLinks.classList.toggle("active");
+  }
+
+  function closeMenu() {
+    const navLinks = document.getElementById("nav-links");
+    navLinks.classList.remove("active");
+  }
+</script>
+<script>
+  const bars = document.querySelectorAll('.fill');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        bars.forEach(bar => {
+          const value = bar.getAttribute('data-value');
+          bar.style.width = value + '%';
+          bar.textContent = value + '%';
+        });
+      } else {
+        // Reset when not visible
+        bars.forEach(bar => {
+          bar.style.width = '0%';
+          bar.textContent = '';
+        });
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  const skillsSection = document.querySelector('#skills');
+  if (skillsSection) {
+    observer.observe(skillsSection);
+  }
+</script>
+
+
+</body>
+</html>
+
+
